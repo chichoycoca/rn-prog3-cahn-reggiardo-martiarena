@@ -66,6 +66,10 @@ class Login extends Component {
                 <TouchableOpacity onPress={() => this.props.navigation.navigate("Register")}>
                     <Text>¿Todavía no estas registrado? Registrate aquí.</Text>
                 </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => this.props.navigation.navigate("Home")}> 
+                    <Text>Ir al ininio</Text>
+                </TouchableOpacity>
                 
             </View>
 

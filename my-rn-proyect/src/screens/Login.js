@@ -26,7 +26,9 @@ class Login extends Component {
         auth.signInWithEmailAndPassword(email, pass)
         .then( response => {
             if(this.state.rememberMe){
-                console.log('sesion');
+                auth.onAuthStateChanged( user => {
+                    console.log(user)
+                })
             }
             this.props.navigation.navigate('Register')
         })
@@ -60,7 +62,7 @@ class Login extends Component {
                 <Text>Recordarme</Text> 
 
                 <TouchableOpacity onPress={() => this.login(this.state.email, this.state.password)}>
-                    <Text>¡Incia sesion!</Text>
+                    <Text>¡Inicia sesion!</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={() => this.props.navigation.navigate("Register")}>
@@ -68,7 +70,7 @@ class Login extends Component {
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={() => this.props.navigation.navigate("Home")}> 
-                    <Text>Ir al ininio</Text>
+                    <Text>Ir al inicio</Text>
                 </TouchableOpacity>
                 
             </View>

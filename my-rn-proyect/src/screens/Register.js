@@ -70,14 +70,8 @@ class Register extends Component {
                     <Text>¡Registrate!</Text>
                 </TouchableOpacity>
 
-
-                {
-                    
-                }
                 <TouchableOpacity onPress={()=> this.props.navigation.navigate("Login")}> 
-                    <Text>
-                        Ir a iniciar sesion. 
-                    </Text>
+                    <Text>Ir a iniciar sesion.</Text>
                 </TouchableOpacity>
             </View>
         )

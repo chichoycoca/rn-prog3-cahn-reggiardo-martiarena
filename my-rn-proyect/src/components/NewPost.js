@@ -17,7 +17,7 @@ class NewPost extends Component {
                 <Text>Creador: {this.props.post.data.owner}</Text>
                 <Text>Cantidad de likes: {this.props.post.data.likes.length}</Text>
 
-                <Text> BOTON DE --- Like ---</Text>
+                <Text>BOTON DE --- Like ---</Text>
             </View>
 
         )

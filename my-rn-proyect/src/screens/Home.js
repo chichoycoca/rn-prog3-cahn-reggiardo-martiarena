@@ -13,7 +13,9 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        db.collection("posts").onSnapshot(
+        db.collection("posts")
+        .orderBy('createdAt', 'desc')
+        .onSnapshot(
             docs => {
                 let posts = [];
                 docs.forEach(doc => {
@@ -31,13 +33,11 @@ class Home extends Component {
     }
 
     render() {
-        console.log(this.state.posts);
-        
         return (
             <View>
                 <Text>Inicio</Text>
 
-                <Text> Posteos de tu comunidad: </Text>
+                <Text>Posteos de tu comunidad: </Text>
 
                 {this.state.loading ? <ActivityIndicator /> :
                     <FlatList
@@ -47,7 +47,7 @@ class Home extends Component {
                 />}
 
                 <TouchableOpacity onPress={() => this.props.navigation.navigate("Post")}>
-                    <Text> Ir a postear </Text>
+                    <Text>Ir a postear</Text>
                 </TouchableOpacity>
 
             </View>

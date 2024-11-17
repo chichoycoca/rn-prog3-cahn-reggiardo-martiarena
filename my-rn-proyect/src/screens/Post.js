@@ -27,7 +27,7 @@ class Post extends Component {
             
             <View style={styles.container}>
                 
-                <Text> Nuevo posteo: </Text>
+                <Text>Nuevo posteo:</Text>
 
                 <TextInput style={styles.field}
                     keyboardType='default'
@@ -37,11 +37,11 @@ class Post extends Component {
                 />
 
                 <TouchableOpacity onPress={()=> this.postear(this.state.message)}> 
-                    <Text> Postear </Text>
+                    <Text>Postear</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={()=> this.props.navigation.navigate("Home")}>
-                    <Text> Ir al inicio </Text>
+                    <Text>Ir al inicio</Text>
                 </TouchableOpacity>
 
             </View>

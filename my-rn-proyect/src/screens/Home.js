@@ -51,7 +51,7 @@ class Home extends Component {
                 </TouchableOpacity>
 
             </View>
-
+ 
 
         )
     }

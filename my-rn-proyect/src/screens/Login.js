@@ -30,7 +30,7 @@ class Login extends Component {
                     console.log(user)
                 })
             }
-            this.props.navigation.navigate('Register')
+            this.props.navigation.navigate('Home')
         })
         .catch( error => 
             this.setState({error: 'Fallo en el login'})

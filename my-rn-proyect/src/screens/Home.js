@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Text } from "react-native";
+import { Text, View, TouchableOpacity } from "react-native";
 
 class Home extends Component{
     constructor(){
@@ -8,7 +8,16 @@ class Home extends Component{
 
     render(){
         return(
-            <Text>Hola</Text>
+            <View> 
+                <Text>Inicio</Text>
+
+                <TouchableOpacity onPress={()=> this.props.navigation.navigate("Post")}>
+                    <Text> Ir a postear </Text>
+                </TouchableOpacity>
+
+            </View>
+            
+
         )
     }
 }

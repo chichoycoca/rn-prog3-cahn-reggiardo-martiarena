@@ -8,7 +8,7 @@ class Home extends Component {
         super()
         this.state = {
             users: [],
-            loadig: true
+            loading: true
         }
     }
 
@@ -50,6 +50,9 @@ class Home extends Component {
                     <Text>Ir a postear</Text>
                 </TouchableOpacity>
 
+                <TouchableOpacity onPress={() => this.props.navigation.navigate("Profile")}>
+                    <Text>Ir a mi perfil</Text>
+                </TouchableOpacity>
             </View>
  
 

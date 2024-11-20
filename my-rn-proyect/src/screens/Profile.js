@@ -34,6 +34,14 @@ class Profile extends Component {
                         loading: false,
                     });
                 });
+                db.collection("users")
+                .where("email", "==", currentUser.email)
+                .onSnapshot((snapshot) => {
+                    snapshot.forEach((doc) => {
+                        const userData = doc.data();
+                        this.setState({ username: userData.username });
+                    });
+                });
         }
     }
 

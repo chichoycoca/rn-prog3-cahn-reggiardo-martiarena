@@ -12,6 +12,7 @@ class Post extends Component {
     }
 
     postear(message) {
+        this.props.navigation.navigate('Home')
         db.collection('posts').add({
             owner: auth.currentUser.email,
             message: message,

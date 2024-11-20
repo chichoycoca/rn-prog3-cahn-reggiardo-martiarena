@@ -11,7 +11,7 @@ class Register extends Component {
             password: '',
             username: '',
             registered: false,
-            error: ''
+            error: '',
         }
     }
 
@@ -39,38 +39,50 @@ class Register extends Component {
             console.error("Error en createUserWithEmailAndPassword:", error.code, error.message);
             this.setState({ error: error.message });
         });
+
+        console.log(this.state.email);
+        console.log(this.state.username);
     }
 
     render(){
+        const {email, pass, username} = this.state;
+        const formCompletado = email !== '' && pass !== '' && username !== '';
+
         return (
             <View>
                 <TextInput 
                     keyboardType = 'email-address'
-                    placeholder='Ingresa tu email'
+                    placeholder='Ingresa tu email (***)'
                     onChangeText={ email => this.setState({email: email})}
                     value={this.state.email}
                 />
                 <TextInput 
                     keyboardType = 'default'
-                    placeholder='Ingresa tu contaseña'
+                    placeholder='Ingresa tu contaseña (***)'
                     secureTextEntry = {true}
                     onChangeText={ pass => this.setState({password: pass})}
                     value={this.state.password}
                 />
                 <TextInput 
                     keyboardType = 'default'
-                    placeholder='Ingresa tu nombre de usuario'
+                    placeholder='Ingresa tu nombre de usuario (***)'
                     onChangeText={ user => this.setState({username: user})}
                     value={this.state.username}
                 />
-                
-                <TouchableOpacity onPress={() => this.register(this.state.email, this.state.password, this.state.username)}>
-                    <Text>¡Registrate!</Text>
+                <Text>(***): Este es un campo obligatorio.</Text>
+                {formCompletado ? (
+                    <TouchableOpacity onPress={() => this.register(this.state.email, this.state.password, this.state.username)}>
+                        <Text>¡Registrate!</Text>
+                    </TouchableOpacity>
+                ) : (
+                <Text>Completa todos los campos para registrarte.</Text>
+                )}
+
+                <Text>{this.state.error}</Text>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate("Login")}> 
+                    <Text>Inicia sesion</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={()=> this.props.navigation.navigate("Login")}> 
-                    <Text>Ir a iniciar sesion.</Text>
-                </TouchableOpacity>
             </View>
         )
     }

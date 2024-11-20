@@ -26,21 +26,19 @@ class Register extends Component {
         }
         auth.createUserWithEmailAndPassword(email, pass)
         .then( response => {
+            this.props.navigation.navigate('Login')
             this.setState({registered: true})
             db.collection('users').add({
                 email: email,
-                password: pass,
                 username: username,
                 createdAt: Date.now(),
                 registered: true
             })
-            .then()
-            .catch( error => console.log(error)
-            )
         })
-        .catch(error =>
-            this.setState({error: 'Fallo en el registro'})
-        )
+        .catch((error) => {
+            console.error("Error en createUserWithEmailAndPassword:", error.code, error.message);
+            this.setState({ error: error.message });
+        });
     }
 
     render(){

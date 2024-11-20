@@ -18,20 +18,6 @@ class Profile extends Component {
         const currentUser = auth.currentUser;  
         if (currentUser) {
             this.setState({ user: currentUser });
-
-            db.collection("users")
-                .where("email", "==", currentUser.email)
-                .get()
-                .then((snapshot) => {
-                    const userDoc = snapshot.docs[0]?.data();
-                    if (userDoc) {
-                        this.setState({ username: userDoc.username });  
-                    }
-                })
-                .catch((error) => {
-                    console.log("Error al obtener el username:", error);
-                });
-
             db.collection("posts")
                 .where("owner", "==", currentUser.email) 
                 .onSnapshot((docs) => {

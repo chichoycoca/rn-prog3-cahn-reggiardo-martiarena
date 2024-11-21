@@ -53,6 +53,10 @@ class Home extends Component {
                 <TouchableOpacity onPress={() => this.props.navigation.navigate("Profile")}>
                     <Text>Ir a mi perfil</Text>
                 </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => this.props.navigation.navigate("Filtrador")}>
+                    <Text>Ir a Filtrador</Text>
+                </TouchableOpacity>
             </View>
  
 

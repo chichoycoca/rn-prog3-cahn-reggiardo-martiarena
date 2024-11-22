@@ -1,43 +1,67 @@
 import React, { Component } from "react";
-import { View, Text, TextInput, FlatList, StyleSheet, ActivityIndicator } from "react-native";
+import { View, Text, TextInput, FlatList, ActivityIndicator, StyleSheet } from "react-native";
 import { db } from "../firebase/config";
 
 class Filtrador extends Component {
     constructor() {
         super();
         this.state = {
-            text: "",
+            text: "", 
             resultados: [],
+            users: [], 
             buscando: false,
+            mensajeError: "",
         };
     }
 
+    componentDidMount() {
+        db.collection("users").onSnapshot(docs => {
+                let users = [];
+                docs.forEach(doc => {
+                    users.push({ 
+                        id: doc.id, 
+                        data: doc.data() 
+                    })
+                })
+                this.setState({ users });
+            },
+            (error) => {
+                console.error("Error al cargar los usuarios:", error);
+            }
+        );
+    }
+
     buscarUsuarios(text) {
-        if (text === "") { 
-            this.setState({ 
-                resultados: [], 
-                buscando: false 
+        if (text === "") {
+            this.setState({
+                resultados: [],
+                mensajeError: "",
             });
             return;
         }
 
         this.setState({ buscando: true });
 
-        db.collection("users")
-            .where("email", "==", text)
-            .onSnapshot((snapshot) => {
-                let resultados = [];
-                snapshot.forEach((doc) => {
-                    resultados.push({ id: doc.id, data: doc.data() });
-                });
-                this.setState({
-                    resultados,
-                    buscando: false,
-                });
-            }, (error) => {
-                console.log(error);
-                this.setState({ buscando: false });
+        const resultados = this.state.users.filter((usuario) => {
+            const email = usuario.data.email.toLowerCase();
+            const textLower = text.toLowerCase();
+        
+            return email.includes(textLower);
+        });
+
+        if (resultados.length === 0) {
+            this.setState({
+                resultados: [],
+                mensajeError: "El email/user name no existe",
+                buscando: false,
             });
+        } else {
+            this.setState({
+                resultados,
+                mensajeError: "",
+                buscando: false,
+            });
+        }
     }
 
     render() {
@@ -47,16 +71,16 @@ class Filtrador extends Component {
                     style={styles.input}
                     placeholder="Buscar por email"
                     onChangeText={(text) => {
-                        this.setState({ text });
-                        this.buscarUsuarios(text);
+                        this.setState({ text }); 
+                        this.buscarUsuarios(text); 
                     }}
-                    value={this.state.text}
+                    value={this.state.text} 
                 />
 
                 {this.state.buscando && <ActivityIndicator size="large" color="#0000ff" />}
 
-                {this.state.resultados.length === 0 && this.state.text.length > 0 && !this.state.buscando ? (
-                    <Text>El email no existe</Text>
+                {this.state.mensajeError ? (
+                    <Text style={styles.errorMessage}>{this.state.mensajeError}</Text>
                 ) : (
                     <FlatList
                         data={this.state.resultados}
@@ -78,6 +102,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
+        backgroundColor: "#fff",
     },
     input: {
         height: 40,
@@ -86,6 +111,11 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         paddingHorizontal: 10,
         marginBottom: 10,
+    },
+    errorMessage: {
+        fontSize: 16,
+        color: "red",
+        textAlign: "center",
     },
     resultItem: {
         padding: 10,

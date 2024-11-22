@@ -35,8 +35,7 @@ class Home extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.header}>Inicio</Text>
-
+    
                 <Text style={styles.subHeader}>Posteos de tu comunidad: </Text>
 
                 {this.state.loading ? <ActivityIndicator /> :
@@ -76,7 +75,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     subHeader: {
-        fontSize: 18,
+        fontSize: 20,
         color: '#555',
         marginBottom: 15,
     },
@@ -92,7 +91,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: '#fff',
-        fontSize: 16,
+        fontSize: 18,
         fontWeight: 'bold',
     },
 });

@@ -43,20 +43,48 @@ class NewPost extends Component {
     render() {
         const userEmail = auth.currentUser.email;
         return (
-            <View>
-                <Text>Creador: {this.props.post.data.owner}</Text>
-                <Text>Mensaje: {this.props.post.data.message}</Text>
-                <Text>Cantidad de likes: {this.props.post.data.likes.length}</Text>
-                <TouchableOpacity 
-                    onPress={() => this.likear()}>
-                    <Text >
-                        {this.state.yaLikeo ? 'Quitar Like' : 'Dar Like'}
+            <View style={styles.postContainer}>
+                <Text style={styles.messageText}>Creador: {this.props.post.data.owner}</Text>
+                <Text style={styles.messageText}>Mensaje: {this.props.post.data.message}</Text>
+                <Text style={styles.messageText}>Cantidad de likes: {this.props.post.data.likes.length}</Text>
+                <TouchableOpacity onPress={() => this.likear()}>
+                    <Text style={styles.likesText}>
+                        {this.state.yaLikeo ? 'Dislike' : 'Like'}
                     </Text>
                 </TouchableOpacity>
             </View>
 
         )
     }
-}
+};
+const styles = StyleSheet.create({
+    /* Tarjeta de cada posteo */
+    postContainer: {
+      padding: 15,
+      backgroundColor: '#ffffff',
+      borderRadius: 12,
+      marginBottom: 15,
+      shadowColor: '#000',
+      shadowOffset: { width: 0, height: 2 },
+      shadowOpacity: 0.1,
+      shadowRadius: 4,
+      elevation: 3, // Sombra en Android
+      borderWidth: 1,
+      borderColor: '#e0e0e0',
+    },  
+    /* Mensaje */
+    messageText: {
+      fontSize: 18,
+      color: '#333',
+      marginBottom: 10,
+    }, 
+    /* Likes */
+    likesText: {
+      fontSize: 18,
+      color: '#666',
+      marginBottom: 10,
+    }
+  });
+  
 
 export default NewPost

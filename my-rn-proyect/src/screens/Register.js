@@ -80,7 +80,7 @@ class Register extends Component {
 
                 <Text>{this.state.error}</Text>
                 <TouchableOpacity onPress={() => this.props.navigation.navigate("Login")}> 
-                    <Text>Ir a inicia sesion</Text>
+                    <Text style={styles.normaltext}>Ir a inicia sesion</Text>
                 </TouchableOpacity>
 
             </View>
@@ -120,12 +120,17 @@ const styles = StyleSheet.create({
       obligatorio: {
         fontWeight: 'bold',
         fontSize: 16,
+        marginBottom: 10,
       },
       warning:{
         fontWeight: 'bold',
         color: '#ff0000',
         fontSize: 16,
-      }
+        marginBottom: 10,
+      },
+      normaltext:{
+        fontSize:16,
+    }
 
 });
 

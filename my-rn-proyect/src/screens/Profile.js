@@ -108,10 +108,10 @@ class Profile extends Component {
 
 const styles = StyleSheet.create({
     mainContainer: {
-        flex: 1, // Asegura que ocupe toda la pantalla
-        justifyContent: 'center', // Centra verticalmente
-        alignItems: 'center', // Centra horizontalmente
-        backgroundColor: '#f9f9f9', // Fondo de la pantalla
+        flex: 1, 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        backgroundColor: '#f9f9f9', 
     },
     container: {
         padding: 200,
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 4,
-        elevation: 3, // Sombra en Android
+        elevation: 3, 
         borderWidth: 1,
         borderColor: '#e0e0e0',
       },
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     text: {
-        fontSize: 18,
+        fontSize: 16,
         color: '#333',
         marginBottom: 6,
     },
@@ -142,11 +142,11 @@ const styles = StyleSheet.create({
         marginVertical: 5,
     },
     postTitle: {
-        fontSize: 18,
+        fontSize: 16,
         marginVertical: 10,
     },
     noPosts: {
-        fontSize: 18,
+        fontSize: 16,
         color: 'gray',
     },
     postItem: {

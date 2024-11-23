@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+        borderColor: '#dbdbdb',
     },
     input: {
         width: '50%',
@@ -99,13 +100,14 @@ const styles = StyleSheet.create({
         borderColor: '#dbdbdb',
         borderWidth: 1,
         alignItems: 'center',
-        marginTop: 10,
         backgroundColor: '#f8f8f8',
         fontSize: 16,
+        marginBottom: 15,
     },
     remember: {
         display: 'flex',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        marginBottom: 15,
     },
     normaltext:{
         fontSize:16,

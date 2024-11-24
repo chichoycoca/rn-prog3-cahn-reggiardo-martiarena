@@ -21,7 +21,7 @@ class Register extends Component {
             return(this.setState({error: 'Email no formateado'}))
         }
         else if (pass.length < 6){
-            console.log('La password debe tener una longitud minima de 6 caracteres');
+            console.log('La contraseña debe tener una longitud minima de 6 caracteres');
             return(this.setState({error:'La password debe tener una longitud minima de 6 caracteres'}))
         }
         auth.createUserWithEmailAndPassword(email, pass)

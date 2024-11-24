@@ -46,17 +46,6 @@ class Home extends Component {
                         contentContainerStyle={styles.postList}
                     />}
 
-                <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate("Post")}>
-                    <Text style={styles.buttonText}>Ir a postear</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate("Profile")}>
-                    <Text style={styles.buttonText}>Ir a mi perfil</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate("Filtrador")}>
-                    <Text style={styles.buttonText}>Ir a Filtrador</Text>
-                </TouchableOpacity>
             </View>
         )
     }

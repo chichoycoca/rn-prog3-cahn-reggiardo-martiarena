@@ -30,10 +30,10 @@ class Login extends Component {
                         console.log(user)
                     })
                 }
-                this.props.navigation.navigate('Home')
+                this.props.navigation.navigate('MenuHome')
             })
             .catch(error =>
-                this.setState({ error: 'Fallo en el login' })
+                this.setState({ error: 'Hubo un error validando los datos ingresados. Intente de nuevo' })
             )
 
     }
@@ -60,6 +60,10 @@ class Login extends Component {
                         onValueChange={value => this.setState({ rememberMe: value })} />
                     <Text style={styles.normaltext}>Recordarme</Text> 
                 </View>
+
+                {this.state.error ? (
+                <Text>{this.state.error}</Text>
+                ) : null}
 
 
                 <TouchableOpacity onPress={() => this.login(this.state.email, this.state.password)}>

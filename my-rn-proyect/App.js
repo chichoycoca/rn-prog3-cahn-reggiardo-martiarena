@@ -7,6 +7,7 @@ import Home from './src/screens/Home';
 import Post from './src/screens/Post';
 import Profile from './src/screens/Profile';
 import Filtrador from './src/screens/Filtrador';
+import MenuHome from './src/components/MenuHome';
 const Stack = createNativeStackNavigator();
 
 

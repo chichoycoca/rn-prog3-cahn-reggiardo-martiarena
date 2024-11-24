@@ -58,7 +58,8 @@ class Login extends Component {
                     <CheckBox
                         value={this.state.rememberMe}
                         onValueChange={value => this.setState({ rememberMe: value })} />
-                    <Text style={styles.normaltext}>Recordarme</Text> </View>
+                    <Text style={styles.normaltext}>Recordarme</Text> 
+                </View>
 
 
                 <TouchableOpacity onPress={() => this.login(this.state.email, this.state.password)}>

@@ -15,6 +15,14 @@ class Register extends Component {
         }
     }
 
+    componentDidMount() {
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                this.props.navigation.navigate('MenuHome'); 
+            }
+        });
+    }
+
     register(email, pass, username){
         if (!email.includes('@')) {
             console.log("Email no formateado"); 

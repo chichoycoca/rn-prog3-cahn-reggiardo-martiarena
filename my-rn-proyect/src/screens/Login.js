@@ -9,8 +9,18 @@ class Login extends Component {
             email: '',
             password: '',
             rememberMe: false,
-            error: ''
+            error: '',
+            logueado: false
         }
+    }
+
+    componentDidMount() {
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                this.setState({ logueado: true });
+                this.props.navigation.navigate('MenuHome'); 
+            }
+        });
     }
 
 
@@ -27,6 +37,7 @@ class Login extends Component {
             .then(response => {
                 if (this.state.rememberMe) {
                     auth.onAuthStateChanged(user => {
+                        this.setState({ logueado: true });
                         console.log(user)
                     })
                 }

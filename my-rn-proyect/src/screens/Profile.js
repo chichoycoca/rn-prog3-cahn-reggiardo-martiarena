@@ -111,11 +111,11 @@ const styles = StyleSheet.create({
         flex: 1, 
         justifyContent: 'center', 
         alignItems: 'center', 
-        backgroundColor: '#f9f9f9', 
+        backgroundColor: '#025669', 
     },
     container: {
         padding: 200,
-        backgroundColor: '#ffffff',
+        backgroundColor: '#fda996',
         borderRadius: 12,
         marginBottom: 15,
         shadowColor: '#000',
@@ -124,18 +124,20 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 3, 
         borderWidth: 1,
-        borderColor: '#e0e0e0',
+        borderColor: '#fda996',
       },
     title: {
         fontSize: 24,
         fontWeight: 'bold',
         textAlign: 'center',
         marginBottom: 20,
+        color: '#fff',
     },
     text: {
         fontSize: 16,
         color: '#333',
         marginBottom: 6,
+        color: '#fff',
     },
     postCount: {
         fontSize: 16,
@@ -147,7 +149,7 @@ const styles = StyleSheet.create({
     },
     noPosts: {
         fontSize: 16,
-        color: 'gray',
+        color: '#fff',
     },
     postItem: {
         marginBottom: 10,

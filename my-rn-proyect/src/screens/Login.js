@@ -65,12 +65,6 @@ class Login extends Component {
                     onChangeText={pass => this.setState({ password: pass })}
                     value={this.state.password}
                 />
-                <View style={styles.remember}>
-                    <CheckBox
-                        value={this.state.rememberMe}
-                        onValueChange={value => this.setState({ rememberMe: value })} />
-                    <Text style={styles.normaltext}>Recordarme</Text> 
-                </View>
 
                 {this.state.error ? (
                 <Text>{this.state.error}</Text>
@@ -94,7 +88,7 @@ class Login extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#025669',
         alignItems: 'center',
         justifyContent: 'center',
         borderColor: '#dbdbdb',
@@ -127,6 +121,7 @@ const styles = StyleSheet.create({
     },
     normaltext:{
         fontSize:16,
+        color:'#fff',
     }
 });
 

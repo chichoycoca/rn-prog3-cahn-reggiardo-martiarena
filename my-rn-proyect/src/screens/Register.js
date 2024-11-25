@@ -44,8 +44,7 @@ class Register extends Component {
             })
         })
         .catch((error) => {
-            console.error("Error en createUserWithEmailAndPassword:", error.code, error.message);
-            this.setState({ error: error.message });
+            this.setState({ error: error });
         });
 
         console.log(this.state.email);

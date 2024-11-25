@@ -33,7 +33,7 @@ class Post extends Component {
 
                     <TextInput style={styles.input}
                         keyboardType='default'
-                        placeholder='message'
+                        placeholder='Deja acá tu mensaje'
                         onChangeText={text => this.setState({ message: text })}
                         value={this.state.message}
                     />
@@ -57,11 +57,11 @@ const styles = StyleSheet.create({
         flex: 1, 
         justifyContent: 'center', 
         alignItems: 'center', 
-        backgroundColor: '#f9f9f9', 
+        backgroundColor: '#025669', 
     },
     container: {
         padding: 200,
-        backgroundColor: '#ffffff',
+        backgroundColor: '#fda996',
         borderRadius: 12,
         marginBottom: 15,
         shadowColor: '#000',
@@ -70,16 +70,17 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 3, 
         borderWidth: 1,
-        borderColor: '#e0e0e0',
+        borderColor: '#fda996',
     },
     title: {
         fontSize: 22,
         fontWeight: 'bold',
-        color: '#333',
+        color: '#fff',
         marginBottom: 20,
     },
     normaltext: {
         fontSize: 16,
+        color: '#fff',
     },
     input: {
         width: '90%',

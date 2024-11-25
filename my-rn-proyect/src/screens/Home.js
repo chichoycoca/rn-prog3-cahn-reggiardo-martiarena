@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-        backgroundColor: '#f9f9f9',
+        backgroundColor: '#025669',
     },
     header: {
         fontSize: 24,
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     },
     subHeader: {
         fontSize: 20,
-        color: '#555',
+        color: '#fff',
         marginBottom: 15,
     },
     postList: {

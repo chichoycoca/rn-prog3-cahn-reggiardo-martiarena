@@ -102,15 +102,19 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-        backgroundColor: "#fff",
+        backgroundColor: "#025669",
     },
     input: {
         height: 40,
-        borderColor: "#ccc",
+        borderColor: "#fda996",
         borderWidth: 1,
         borderRadius: 5,
         paddingHorizontal: 10,
         marginBottom: 10,
+        backgroundColor: '#fda996',
+        color:'#fff',
+        fontWeight: "bold",
+        fontSize: 16,
     },
     errorMessage: {
         fontSize: 16,

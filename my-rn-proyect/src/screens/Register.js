@@ -100,7 +100,7 @@ class Register extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#025669',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -129,6 +129,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 16,
         marginBottom: 10,
+        color:'#fff'
       },
       warning:{
         fontWeight: 'bold',
@@ -138,6 +139,7 @@ const styles = StyleSheet.create({
       },
       normaltext:{
         fontSize:16,
+        color: '#fff'
     }
 
 });

@@ -56,9 +56,6 @@ class NewPost extends Component {
                     size={24}
                     color={this.state.yaLikeo ? "red" : "black"}
                 /> 
-                    <Text style={styles.likesText}>
-                        {this.state.yaLikeo ? 'Dislike' : 'Like'}
-                    </Text>
                 </TouchableOpacity>
             </View>
 

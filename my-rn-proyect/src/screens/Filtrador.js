@@ -77,9 +77,9 @@ class Filtrador extends Component {
                     value={this.state.text} 
                 />
 
-                {this.state.buscando && <ActivityIndicator size="large" color="#0000ff" />}
+                {this.state.buscando ? <ActivityIndicator size="large" color="#0000ff" /> :
 
-                {this.state.mensajeError ? (
+                this.state.mensajeError ? (
                     <Text style={styles.errorMessage}>{this.state.mensajeError}</Text>
                 ) : (
                     <FlatList
@@ -88,7 +88,7 @@ class Filtrador extends Component {
                         renderItem={({ item }) => (
                             <View style={styles.resultItem}>
                                 <Text style={styles.email}>Email: {item.data.email}</Text>
-                                <Text>Username: {item.data.username}</Text>
+                                <Text style={styles.email}>Username: {item.data.username}</Text>
                             </View>
                         )}
                     />
@@ -125,9 +125,11 @@ const styles = StyleSheet.create({
         padding: 10,
         borderBottomColor: "#ccc",
         borderBottomWidth: 1,
+        
     },
     email: {
         fontWeight: "bold",
+        color: "white",
     },
 });
 
